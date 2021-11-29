@@ -4,29 +4,34 @@ import java.util.Observable;
 import java.util.Observer;
 
 @SuppressWarnings("deprecation")
-public class HonestDisplayObserver extends Display implements Observer {
+public class HonestDisplayObserver extends Display{
 	
 	private ArrayList<State> states;
 	
 	
 	public HonestDisplayObserver(Observable electionData) {
-		
-			electionData.addObserver(this);
+			
+			super(electionData);
+			//electionData.addObserver(this);
+			displayStandings = new HonestDisplay();
+			
+			/**
 			democraticDisplay = new DemocraticDisplay();
 			republicanDisplay = new RepublicanDisplay();
 			electoralDisplay = new ElectoralDisplay();
-				
+				*/
 		}
-
+/**
 	public void update(Observable electionData, Object object)
 	{
 		if (object instanceof ElectionData.ElectionStats)
 		{
 			ElectionData.ElectionStats electionStats = (ElectionData.ElectionStats) object;
 			this.states = electionStats.getElectionStats();
-			display();
+			displayStandings(states);
 		}
 	}
+	
 	
 	public void display()
 	{
@@ -69,7 +74,7 @@ public class HonestDisplayObserver extends Display implements Observer {
 			}
 			
 			
-		}
+		}*/
 	
 
 }

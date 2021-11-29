@@ -7,6 +7,7 @@ public class Main {
 		
 		ElectionData electionData = new ElectionData();
 		HonestDisplayObserver honestDisplay = new HonestDisplayObserver(electionData);
+		RepublicanFavoringObserver repDisplay = new RepublicanFavoringObserver(electionData);
 
 		ArrayList<State> states = new ArrayList<State>();
 		states.add(new State("NJ", 1523, 8966, 7));
