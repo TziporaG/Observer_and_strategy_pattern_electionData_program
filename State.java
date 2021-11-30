@@ -6,6 +6,7 @@ public class State {
 	private int democraticVoteCount;
 	private int republicanVoteCount;
 	private int electoralVoteCount;
+	private boolean specialState = false;
 	
 	static final String[] states = { "AL", "AK", "AS", "AZ", "AR", "CA", "CO", "CT", "DE", "DC", "FM", "FL", "GA", 
 			"GU", "HI", "ID", 
@@ -67,18 +68,21 @@ public class State {
 	public void setElectoralVoteCount(int electoralVoteCount) {
 		this.electoralVoteCount = electoralVoteCount;
 	}
-
-	@Override
-	public String toString() {
-		return name + ":\n----------\n"
-				+ "Democratic Vote Count: " + democraticVoteCount + "\nRepublican Vote Count: " + republicanVoteCount
-				+ "\nElectoral Vote Count: " + electoralVoteCount;
-	}
 	
 	public String getName() {
 		
 		return this.name;
 	}
 	
+	public void setSpecialState() {
+		
+		this.specialState  = true;
+	}
+	
+	public boolean getSpecialState() {
+		
+		return this.specialState;
+	}
 	
 }
+
