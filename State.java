@@ -64,10 +64,6 @@ public class State {
 	public int getElectoralVoteCount() {
 		return electoralVoteCount;
 	}
-
-	public void setElectoralVoteCount(int electoralVoteCount) {
-		this.electoralVoteCount = electoralVoteCount;
-	}
 	
 	public String getName() {
 		
