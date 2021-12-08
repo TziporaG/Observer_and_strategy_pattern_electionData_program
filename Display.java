@@ -123,17 +123,29 @@ public class Display implements Observer {
 
 		System.out.println("Popular Vote: Democratic = " + demTotal + " Republican = " + repTotal);
 		System.out.println("Electoral Vote: Democratic = " + demElectoral + " Republican = " + repElectoral);
-
-		if (demElectoral > repElectoral) {
-			System.out.println("Projected: Democratic");
+		
+		if (demTotal > repTotal) {
+			System.out.println("Projected Popular Vote Winner: Democratic");
 		}
 
-		else if (demElectoral == repElectoral) {
-			System.out.println("Projected: Undetermined");
+		else if (demTotal == repTotal) {
+			System.out.println("Projected Popular Vote Winner: Undetermined");
 		}
 
 		else {
-			System.out.println("Projected: Republican");
+			System.out.println("Projected Popular Vote Winner: Republican");
+		}
+		
+		if (demElectoral > repElectoral) {
+			System.out.println("Projected Electoral Vote Winner: Democratic");
+		}
+
+		else if (demElectoral == repElectoral) {
+			System.out.println("Projected Electoral Vote Winner: Undetermined");
+		}
+
+		else {
+			System.out.println("Projected Electoral Vote Winner: Republican");
 		}
 
 		displayLegalMessage();
