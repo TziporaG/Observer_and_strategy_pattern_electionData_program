@@ -6,8 +6,8 @@ public class State {
 	private int popularDemocratic;
 	private int popularRepublican;
 	private int electoralVoteCount;
-	private boolean specialState = false;
 
+	//list of all the valid states
 	static final String[] states = { "AL", "AK", "AS", "AZ", "AR", "CA", "CO", "CT", "DE", "DC", "FM", "FL", "GA", "GU",
 			"HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MH", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE",
 			"NV", "NH", "NJ", "NM", "NY", "NC", "ND", "MP", "OH", "OK", "OR", "PW", "PA", "PR", "RI", "SC", "SD", "TN",
@@ -15,6 +15,7 @@ public class State {
 
 	public State(String name, int popularDemocratic, int popularRepublican, int electoralVoteCount) {
 
+		//check if a valid state name was entered
 		boolean notFound = true;
 		for (int i = 0; i < states.length; i++) {
 			if (states[i].equalsIgnoreCase(name)) {
@@ -27,7 +28,8 @@ public class State {
 		}
 
 		this.name = name;
-
+		
+		//if enter a negative vote count number, vote count will eqaul 0
 		if (popularDemocratic >= 0) {
 
 			this.popularDemocratic = popularDemocratic;
@@ -62,21 +64,6 @@ public class State {
 
 	public int getElectoralVoteCount() {
 		return electoralVoteCount;
-	}
-
-	public String getName() {
-
-		return this.name;
-	}
-
-	public void setSpecialState() {
-
-		this.specialState = true;
-	}
-
-	public boolean getSpecialState() {
-
-		return this.specialState;
 	}
 
 }

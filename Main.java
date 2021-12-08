@@ -4,16 +4,13 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Main {
-	/**
-	 * Properties Choose 'Java Build Path' Click on 'Sources' tab on top Click on
-	 * 'Add Folder' on the right panel Select your folders and apply
-	 * 
-	 * @param args
-	 */
+
 	public static void main(String[] args) {
 
+		//instatiate the observable
 		ElectionData electionData = new ElectionData();
-
+		
+		//instantiate 5 observers
 		Observer_5_Honest honest = new Observer_5_Honest(electionData);
 		Observer_4_RaisingDemocraticPopular raisingDemocraticPopular = new Observer_4_RaisingDemocraticPopular(
 				electionData);
@@ -21,6 +18,7 @@ public class Main {
 		Observer_2_FavoringDemocratic democraticFavoringObserver = new Observer_2_FavoringDemocratic(electionData);
 		Observer_1_FavoringRepublican republicanFavoringObserver = new Observer_1_FavoringRepublican(electionData);
 
+		//populate an ArrayList with 5 State Objects
 		ArrayList<State> states = new ArrayList<State>();
 		states.add(new State("NJ", 1523, 8966, 7));
 		states.add(new State("NY", 1400, 1500, 9));
@@ -28,10 +26,12 @@ public class Main {
 		states.add(new State("NC", 900, 932, 2));
 		states.add(new State("ND", 7520, 845, 3));
 
+		//pass in states list to Observable
 		electionData.setElectionStats(states);
 
 		Random randVoteCount = new Random();
-
+		
+		//change the vote count numbers in the states a few times to demonstrate each working observable
 		for (int i = 0; i < 4; i++) {
 
 			System.out.println("\n****************DATA CHANGED********************");

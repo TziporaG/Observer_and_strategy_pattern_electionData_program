@@ -10,6 +10,7 @@ public class Observer_5_Honest extends Display {
 		super(electionData);
 		electionData.addObserver(this);
 
+		//uses an interface implementations that are all honest
 		popularDemocratic = new PopularHonestDemocratic();
 		popularRepublican = new PopularHonestRepublican();
 		determineElectoral = new ElectoralSimple();

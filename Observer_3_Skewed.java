@@ -11,7 +11,11 @@ public class Observer_3_Skewed extends Display {
 		electionData.addObserver(this);
 
 		popularDemocratic = new PopularHonestDemocratic();
+		
+		//uses an interface implementation that lowers the Republican popular vote count
 		popularRepublican = new PopularLoweredRepublican();
+		
+		//uses an interface implementation that raises the Republican Electoral vote count
 		determineElectoral = new ElectoralRaisedRepublican();
 
 	}

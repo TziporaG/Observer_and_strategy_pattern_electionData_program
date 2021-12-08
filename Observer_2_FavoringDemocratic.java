@@ -9,9 +9,11 @@ public class Observer_2_FavoringDemocratic extends Display {
 
 		super(electionData);
 		electionData.addObserver(this);
-
+		
 		popularDemocratic = new PopularHonestDemocratic();
 		popularRepublican = new PopularHonestRepublican();
+		
+		//uses an interface implementation that raises the Electoral Democratic vote count
 		determineElectoral = new ElectoralRaisedDemocratic();
 
 	}
